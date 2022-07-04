@@ -11,9 +11,11 @@ namespace SendWhatsAppMessage
             Console.WriteLine("Enter WhatsApp No.:");
             string number = Console.ReadLine();
             string whatsAppUrl = $"{_whatsAppUri}{number}";
-            var psi = new ProcessStartInfo();
-            psi.UseShellExecute = true;
-            psi.FileName = whatsAppUrl;
+            var psi = new ProcessStartInfo
+            {
+                UseShellExecute = true,
+                FileName = whatsAppUrl
+            };
             Process.Start(psi);
         }
     }
